@@ -1,0 +1,17 @@
+.header {
+  background-color: white;
+  border: 1px solid $border-color; 
+  border-bottom: none;
+
+  .wrapper {
+    max-width: 90%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .banner {
+    strong {
+      color: $primary;
+    }
+  }
+}

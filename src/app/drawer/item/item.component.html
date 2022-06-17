@@ -1,0 +1,24 @@
+<div class="item mt-2 p-3">
+  <div class="container">
+    <div class="item__date">
+      {{ item.date | date:'mediumDate' }}
+
+      <div class="dropdown">
+        <button class="option" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
+          </svg>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <li><button class="dropdown-item" type="button" (click)="edit = true">Edit</button></li>
+          <li><button class="dropdown-item" type="button" (click)="deletePost()">Remove</button></li>
+        </ul>
+      </div>
+    </div>
+    <input [disabled]="edit === false" [value]="item.post" [(ngModel)]="item.post">
+    <div class="d-flex flex-row" *ngIf="edit">
+      <button class="button button__primary w-auto" (click)="updatePost()">Save</button>
+      <button class="button button__secondary w-auto mx-1" (click)="edit = false">Cancel</button>
+    </div>
+  </div>
+</div>

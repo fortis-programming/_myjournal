@@ -1,0 +1,26 @@
+.drawer {
+  &__header {
+    background-color: white;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    cursor: pointer;
+    color: $secondary;
+    min-width: 100vw;
+
+    input {
+      outline: none;
+      border: none;
+      background-color: transparent;
+      width: 100%;
+    }
+
+    &:hover {
+      background-color: whitesmoke;
+    }
+  }
+
+  &__item-list {
+    display: flex;
+    flex-direction: column;
+  }
+}

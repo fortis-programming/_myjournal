@@ -1,0 +1,39 @@
+<!-- data-bs-toggle="modal" data-bs-target="#exampleModal" -->
+<div class="sticky-top drawer__header p-3">
+  <div class="wrapper d-flex flex-row">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"
+      style="height: 25px;">
+      <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+      <path fill-rule="evenodd"
+        d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
+        clip-rule="evenodd" />
+    </svg>
+    <!-- <p class="my-auto mx-2">How was your day?</p> -->
+    <input class="mx-2" type="text" placeholder="Type here" (keyup.enter)="submit()" [(ngModel)]="post.post">
+  </div>
+</div>
+
+<div class="wrapper drawer mt-4">
+  <app-empty-state *ngIf="isEmpty"></app-empty-state>
+  <div class="drawer__item-list">
+    <app-item *ngFor="let item of postList" [item]="item"></app-item>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Write to journal</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <textarea class="form-control" id="message-text" [(ngModel)]="post.post"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="button button__primary" [disabled]="post.post == ''" (click)="submit()"
+          data-bs-dismiss="modal">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>

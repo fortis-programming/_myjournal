@@ -1,0 +1,18 @@
+.empty-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+  height: 75vh;
+
+  img {
+    height: 150px;
+  }
+
+  p {
+    font-size: 0.788rem;
+    max-width: 60ch;
+  }
+}

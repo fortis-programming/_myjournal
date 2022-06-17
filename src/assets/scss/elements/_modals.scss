@@ -1,0 +1,15 @@
+.modal {
+
+  .modal-body {
+    textarea {
+      border: none;
+      outline: none;
+    }
+  }
+
+  .modal-footer {
+    button {
+      width: 100%;
+    }
+  }
+}
